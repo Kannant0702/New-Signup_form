@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+<h1>Nemesis Consultants LLP</h1>
+    <title>New Signup Form</title>
+</head>
+<body bgcolor="nivetha"><center>
+    <form method="POST">
+        {% csrf_token %}
+        <table border="1">
+        {{form}} 
+    </table>
+    <input type="submit" value="Create User"> | <a href="{% url 'loginuser' %}">Login</a>
+    <h1 style="color:red;">{{error}}</h1> 
+    <h1 style="color:green;">{{info}} </h1>
+    </form>
+
+</center>
+    
+</body>
+</html> 

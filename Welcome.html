@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome {{user.username}} </title>
+   
+</head>
+<body> 
+    <h1> Welcome {{user.username}} </h1>
+    {% if user.is_authenticated%}
+    <form method="POST" action="{% url 'Logoutpage' %}">
+     {% csrf_token %}
+        <input type="submit" value="Logout"/></form>
+        <img src="http://cise-egypt.com/wp-content/uploads/2019/09/WELCOME-ST-IVES.jpg" style="background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-top: 40px;" alt="">
+    {% else  %}
+    <a href="{% url 'loginuser' %}">Login</a><br>
+    <a href="{% url 'signnewuser' %}">Signup</a>
+    {% endif %}
+</body>
+</html>
